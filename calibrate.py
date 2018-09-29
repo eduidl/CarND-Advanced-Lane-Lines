@@ -1,6 +1,6 @@
 import cv2
-import glob
 import numpy as np
+from pathlib import Path
 import pickle
 
 def calibrate(nx=9, ny=6, debug=False):
@@ -10,17 +10,17 @@ def calibrate(nx=9, ny=6, debug=False):
     imgpoints = [] # 2d points in image plane.
 
     # Make a list of calibration images
-    images = glob.glob('./camera_cal/calibration*.jpg')
+    paths = Path('./camera_cal').glob('calibration*.jpg')
     
     # Step through the list and search for chessboard corners
-    for fname in images:
-        img = cv2.imread(fname)
-        gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
-        ret, corners = cv2.findChessboardCorners(gray, (nx, ny), None)
+    for path in paths:
+        img = cv2.imread(path.as_posix())
+        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        ret, corners = cv2.findChessboardCorners(gray, (nx,ny), None)
 
         if not ret: continue
 
-        cv2.drawChessboardCorners(img, (nx, ny), corners, ret)
+        cv2.drawChessboardCorners(img, (nx,ny), corners, ret)
         objpoints.append(objp)
         imgpoints.append(corners)
                 
