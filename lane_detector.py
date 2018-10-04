@@ -105,11 +105,11 @@ class LaneDetector:
         return x, y
     
     def get_curvature(self, x, y, ploty):
+        xm_per_pix = 3.7/250
         ym_per_pix = 30/720
-        xm_per_pix = 3.7/700
         y_eval = np.max(ploty)
         
-        scene_w = w * xm_per_pix
+        scene_w = dst_w * xm_per_pix
         scene_h = h * ym_per_pix
         
         curverad, intercept = {}, {}

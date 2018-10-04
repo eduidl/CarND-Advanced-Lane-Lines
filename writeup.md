@@ -158,10 +158,10 @@ I did this in lines #107 through #124 in my code in `lane_detector.py`
 ```py
 def get_curvature(self, x, y, ploty):
     ym_per_pix = 30/720
-    xm_per_pix = 3.7/700
+    xm_per_pix = 3.7/250
     y_eval = np.max(ploty)
     
-    scene_w = w * xm_per_pix
+    scene_w = dst_w * xm_per_pix
     scene_h = h * ym_per_pix
     
     curverad, intercept = {}, {}
