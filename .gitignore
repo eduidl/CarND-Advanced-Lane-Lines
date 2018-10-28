@@ -1,13 +1,6 @@
+calibration.p
 
-# Created by https://www.gitignore.io/api/jupyternotebook,python
-
-### JupyterNotebook ###
-.ipynb_checkpoints
-*/.ipynb_checkpoints/*
-
-# Remove previous ipynb_checkpoints
-#   git rm -r .ipynb_checkpoints/
-#
+# Created by https://www.gitignore.io/api/python
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
@@ -130,4 +123,4 @@ pyvenv.cfg
 pip-selfcheck.json
 
 
-# End of https://www.gitignore.io/api/jupyternotebook,python
+# End of https://www.gitignore.io/api/python
